@@ -36,37 +36,32 @@ public class Bitacora_Ejercicios {
                     break;
 
                 case 2:
-                    double x1 = 0, x2 = 0, x3 = 0, x4 = 0;
-                    System.out.print("Ingrese el valor de a: ");
-                    int a = xd.nextInt();
-                    System.out.print("Ingrese el valor de b: ");
-                    int b = xd.nextInt();
-                    System.out.print("Ingrese el valor de c: ");
-                    int c = xd.nextInt();
-                    double discriminante = Math.sqrt(Math.pow(b, 2) - (4 * a * c));
-                    if (discriminante > 0) {
-                        x1 = 0;//pega tu formula
-                        x2 = 0;//pega tu formula
-                        x3 = (-2 * c) / (b + discriminante);
-                        x4 = (-2 * c) / (b - discriminante);
-                    }
-                    else if (discriminante == 0) {
-                        x1 = 0;//pega tu formula
-                        x2 = x1;
-                        x3 = (-2 * c) / (b + discriminante);
-                        x4 = x3;
-                    }
-                    if (discriminante >= 0) {
-                        System.out.println("");
-                        System.out.println("Primer Metodo");
-                        System.out.println("El resultado de x1 es " + x1);
-                        System.out.println("El resultado de x2 es " + x2);
-                        
-                        System.out.println("");
-                        System.out.println("Segundo Metodo");
-                        System.out.println("El resultado de x1 es " + x3);
-                        System.out.println("El resultado de x2 es " + x4);
-                        
+                    double ax = 0, bx = 0, cx = 0, Raizx, x1 = 0, x2 = 0, x = 0;
+
+                    System.out.println("INGRESA EL VALOR DE 'ax2'");
+                    ax = xd.nextDouble();
+                       if (ax == 0) {
+                          System.out.println("\n-No se puede realizar la formula");
+                           }
+        
+                    System.out.println("INGRESA EL VALOR DE 'bx'");
+                    bx = xd.nextDouble();
+
+                    System.out.println("INGRESE EL VALOR DE 'c'");
+                    cx = xd.nextDouble();
+                     System.out.println(" ");
+                    Raizx = (Math.pow(bx, 2)) - 4 * ax * cx;
+
+                    if (Raizx >= 0) {
+                         if (Raizx == 0) {
+                             x = -bx / 2 * ax;
+                             System.out.println("La unica raiz es x = " + x);
+                         } else {
+                            x1 = (-bx + (Math.sqrt(Raizx))) / 2 * ax;
+                            x2 = (-bx - (Math.sqrt(Raizx))) / 2 * ax;
+                            System.out.println("Resultado de x1 = " + x1);
+                            System.out.println("Resultado de x2 = " + x2);
+                         }
                     }
                     else {
                         System.out.println("No tiene ninguna solucion");
